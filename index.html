@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="br.com.drummond.escola.Aluno" %>
+<%
+	String ra = request.getParameter("ra");
+	String nome = request.getParameter("nome");
+	String email = request.getParameter("email");
+	String cpf = request.getParameter ("cpf");
+	
+	Aluno aluno = new Aluno();
+	aluno.ra = ra;
+	aluno.nome = nome;
+	aluno.email = email;
+	aluno.cpf = cpf;
+	
+
+	
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Escola - Cadastro Aluno</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-md-center">
+			<form class="col-md-6">
+				<h1>Escola - Cadastro Aluno</h1>
+				
+				<div class="form-group">
+					<label for="inputRa">R.A:</label>
+					<input type="number" name="ra" required class="form-control" id="txtRa"
+					placeholder="Digite o R.A do aluno">
+					<small class="form-text text-muted">Digite somente números</small>
+				</div>
+				
+				<div class="form-group">
+					<label for="inputNome">Nome:</label>
+					<input type="text" name="nome"class="form-control" id="txtNome" aria-describedby="emailHelp"
+					placeholder="Digite o nome do aluno">
+				</div>
+				
+				<div class="form-group">
+					<label for="inputEmail">E-mail:</label>
+					<input type="email" name="email"	class="form-control" id="txtEmail" aria-describedby="nomeHelp"
+					placeholder="Digite o e-mail do aluno">
+				</div>
+
+				<div class="form-group">
+					<label for="inputCpf">CPF:</label>
+					<!-- required (Obrigatório) -->
+					<input type="number" name="cpf"required class="form-control" id="txtCpf" 
+					placeholder="Digite seu CPF"> 
+					<small class="form-text text-muted">Digite somente números</small>
+				</div>
+				<p>
+					<input class="btn btn-primary" type="submit" value="Cadastrar">
+					<input class="btn btn-danger" type="reset" value="Reset">
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
